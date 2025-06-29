@@ -15,7 +15,8 @@ class Solution:
         # blue = costs[m-1][1]
         # green = costs[m-1][2]
         for i in range(m-2,-1, -1):
-            
+            # for each house, we add the cost of painting it with the minimum cost of painting the next house
+            # with a different color than the current house
             costs[i][0] += min(costs[i+1][1] , costs[i+1][2])
             costs[i][1] += min(costs[i+1][0] , costs[i+1][2])
             costs[i][2] += min(costs[i+1][0] , costs[i+1][1])
